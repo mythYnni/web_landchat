@@ -230,37 +230,53 @@
             slidesToScroll: 1,
             autoplay: false,
             rtl: $("html").attr("dir") == "rtl" ? true : false,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 5000,
             speed: 1500,
-            dots: false,
+            dots: true,
             pauseOnHover: true,
             arrows: true,
             prevArrow: '<button type="button" class="slick-prev" id="slick-next-none"><i class="fas fa-arrow-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next slick-next-important" id="slick-next-none"><i class="fas fa-arrow-right"></i></button>',
             responsive: [{
-                    breakpoint: 1000,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
                     breakpoint: 1050,
                     settings: {
-                        slidesToShow: 3
+                        slidesToShow: 3, // Khi màn hình nhỏ hơn 800px
                     }
                 },
                 {
-                    breakpoint: 800,
+                    breakpoint: 950,
                     settings: {
-                        slidesToShow: 2
+                        slidesToShow: 3, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
                     }
                 },
                 {
-                    breakpoint: 767,
+                    breakpoint: 950,
                     settings: {
-                        slidesToShow: 1,
-                        arrows: false,
-                        dots: true,
+                        slidesToShow: 2, // Khi màn hình nhỏ hơn 800px
+                    }
+                },
+                {
+                    breakpoint: 750,
+                    settings: {
+                        slidesToShow: 2, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 2, // Khi màn hình nhỏ hơn 800px
+                    }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        slidesToShow: 1, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToShow: 1, // Khi màn hình nhỏ hơn 500px
                     }
                 }
             ]
@@ -269,35 +285,57 @@
         $(document).ready(function() {
             // Initialize Slick Slider
             $('.property-five-slider-blog').slick({
-                slidesToShow: 3,
+                slidesToShow: 2,
                 slidesToScroll: 1,
                 autoplay: false,
                 rtl: $("html").attr("dir") == "rtl" ? true : false,
                 autoplaySpeed: 2000,
                 speed: 1500,
-                dots: false,
+                dots: true,
                 pauseOnHover: true,
                 arrows: true,
                 prevArrow: $('.slick-prev-blog'),
                 nextArrow: $('.slick-next-blog'),
                 responsive: [{
-                        breakpoint: 1199,
+                        breakpoint: 1050,
                         settings: {
-                            slidesToShow: 3
+                            slidesToShow: 3, // Khi màn hình nhỏ hơn 800px
                         }
                     },
                     {
-                        breakpoint: 800,
+                        breakpoint: 950,
                         settings: {
-                            slidesToShow: 2
+                            slidesToShow: 3, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
                         }
                     },
                     {
-                        breakpoint: 767,
+                        breakpoint: 950,
                         settings: {
-                            slidesToShow: 1,
-                            arrows: false,
-                            dots: true
+                            slidesToShow: 2, // Khi màn hình nhỏ hơn 800px
+                        }
+                    },
+                    {
+                        breakpoint: 720,
+                        settings: {
+                            slidesToShow: 2, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
+                        }
+                    },
+                    {
+                        breakpoint: 700,
+                        settings: {
+                            slidesToShow: 2, // Khi màn hình nhỏ hơn 800px
+                        }
+                    },
+                    {
+                        breakpoint: 550,
+                        settings: {
+                            slidesToShow: 1, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
+                        }
+                    },
+                    {
+                        breakpoint: 500,
+                        settings: {
+                            slidesToShow: 1, // Khi màn hình nhỏ hơn 500px
                         }
                     }
                 ]
