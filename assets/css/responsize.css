@@ -205,23 +205,16 @@
     background-color: rgba(255, 255, 255, 0)
 }
 
-@media (min-width: 1440px) {
-    .slick-next-important {
-        left: 1200px !important;
-        top: 215px !important;
-    }
-    .arrow-style-two .slick-prev {
-        left: -30px;
-        top: 215px !important;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1440px) {}
-
 
 /* Điện thoại iphone SE */
 
-@media (max-width: 380px) {
+@media (max-width: 395px) {
+    .section-heading__inner-blog {
+        display: none;
+    }
+    .banner-overlay__slider {
+        height: 550px;
+    }
     .property-type-five-item__title {
         margin-bottom: 0px !important;
         font-size: 20px;
@@ -234,8 +227,7 @@
         font-size: 24px;
     }
     .div-type-p {
-        margin-top: 10px;
-        padding: 23px 30px0px 30px;
+        margin-top: 12px;
     }
     .list-home-pd {
         padding: 60px 0px 60px 0px;
@@ -308,6 +300,7 @@
         border-radius: 4px;
         overflow: hidden;
         background-color: #fff;
+        padding-right: 4px;
     }
     .search-button-banner {
         padding: 12px 8px !important;
@@ -322,7 +315,22 @@
         padding: 1px;
         background-color: none;
     }
+    .custom-select {
+        position: relative;
+        background-image: none;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(58, 71, 91, 1) !important;
+        border: 0px solid var(--border-color) !important;
+        border-radius: 6px !important;
+        margin: 0px 0px 1px 0px;
+    }
+    .mt-1-select {
+        margin-top: 2px;
+    }
     .select-btn-multiselect {
+        margin: 0px 0px 2px 0px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -398,7 +406,7 @@
         font-size: 16px;
         font-weight: 500;
         color: #62cec5;
-        margin: 8px 0px 0px 0px;
+        margin: 10px 0px 12px 0px;
     }
     .property-type-five-item__desc {
         color: black;
@@ -492,6 +500,9 @@
 /* Điện thoại từ 414px */
 
 @media (min-width: 400px) and (max-width: 450px) {
+    .section-heading__inner-blog {
+        display: none;
+    }
     .chan-trang-tham-dinh {
         display: flex;
         align-items: center;
@@ -528,8 +539,8 @@
         font-size: 24px;
     }
     .div-type-p {
-        margin-top: 10px;
-        padding: 23px 30px 0px 30px;
+        margin-top: 0px;
+        padding: 10px 30px 0px 30px;
     }
     .list-home-pd {
         padding: 50px 0px 60px 0px;
@@ -596,7 +607,11 @@
         line-height: 50px;
         font-family: system-ui !important;
     }
+    .mt-1-select {
+        margin-top: 2px;
+    }
     .search-container-banner {
+        padding-right: 3px;
         display: flex;
         border: 0px;
         border-radius: 4px;
@@ -624,6 +639,7 @@
         border-radius: 6px;
         cursor: pointer;
         background-color: white;
+        margin: 0px 0px 2px 0px;
     }
     .selected-option {
         background-color: white;
@@ -640,6 +656,9 @@
         display: none;
         z-index: 10;
         width: 95%;
+    }
+    .custom-select {
+        margin: 0px 0px 1px 0px;
     }
     .select-btn-multiselect .btn-select-multiselect {
         font-size: 14px !important;
@@ -692,7 +711,7 @@
         font-size: 16px;
         font-weight: 500;
         color: #62cec5;
-        margin: 8px 0px 0px 0px;
+        margin: 10px 0px 12px 0px;
     }
     .property-type-five-item__desc {
         color: black;
@@ -769,6 +788,9 @@
 }
 
 @media (min-width: 450px) and (max-width: 700px) {
+    .section-heading__inner-blog {
+        display: none;
+    }
     .nested-list {
         display: none;
         position: absolute;
@@ -935,6 +957,15 @@
 }
 
 @media (min-width: 700px) and (max-width: 950px) {
+    .banner-overlay__slider {
+        height: 500px;
+    }
+    .section-heading__inner-blog {
+        display: none;
+    }
+    .mt-1-select {
+        margin-top: 2px;
+    }
     .chan-trang-tham-dinh {
         display: flex;
         align-items: center;
@@ -1051,8 +1082,8 @@
         line-height: 40px;
         font-weight: 700;
     }
-    .slick-prev-blog,
-    .slick-next-blog {
+    .slick-prev-none,
+    .slick-next-none {
         display: none !important;
     }
     .section-heading__title {
@@ -1101,6 +1132,9 @@
 }
 
 @media (min-width: 950px) and (max-width: 1020px) {
+    .section-heading__inner-blog {
+        display: none;
+    }
     .nav-menu {
         gap: 12px;
     }
@@ -1318,14 +1352,17 @@
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1050px) {
+@media (min-width: 1020px) and (max-width: 1250px) {
+    #slick-next-none {
+        display: none;
+    }
     .arrow-style-two .slick-prev {
-        left: -20px;
-        top: 250px;
+        left: 0%;
+        top: 40%;
     }
     .arrow-style-two .slick-arrow {
-        top: 250px;
-        right: 50px;
+        top: 40%;
+        right: 10%;
     }
     .nav-menu {
         gap: 12px;
@@ -1423,6 +1460,9 @@
         line-height: 20px;
         font-weight: 400;
     }
+    .banner-overlay__slider {
+        height: 600px;
+    }
     .options-list li {
         width: 100%;
     }
@@ -1430,7 +1470,7 @@
         margin-bottom: 20px;
         font-weight: 800;
         color: white;
-        font-size: 60px;
+        font-size: 50px;
         line-height: 60px;
         font-family: system-ui !important;
     }
@@ -1547,14 +1587,53 @@
     }
 }
 
-@media (min-width: 1400) {
+@media (min-width: 1250px) {
     .arrow-style-two .slick-prev {
-        left: 0px;
-        top: 250px;
+        left: 0%;
+        top: 40%;
     }
     .arrow-style-two .slick-arrow {
-        top: 250px;
-        right: 50px;
+        top: 40%;
+        right: 10%;
+    }
+    .banner-overlay__slider {
+        background-image: url(../images/thumbs/banner-eight.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+        padding: clamp(5rem, -2.607rem + 15.848vw, 11.25rem) 0;
+        height: 700px;
+    }
+}
+
+@media (min-width: 1250px) {
+    .arrow-style-two .slick-prev {
+        left: 0%;
+        top: 40%;
+    }
+    .arrow-style-two .slick-arrow {
+        top: 40%;
+        right: 10%;
+    }
+    .property-type-five-item__thumb {
+        width: 100% !important;
+        overflow: hidden;
+    }
+    .col-center-display-footer {
+        display: flex;
+        justify-content: center;
+    }
+    #slick-next-none {
+        display: none;
+    }
+    .property-item__thumb-image {
+        position: relative;
+        overflow: hidden;
+        height: 400px;
+        display: flex;
+        width: 100%;
     }
 }
 
@@ -1570,4 +1649,167 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+
+
+/* Phone */
+
+.select-box-phone {
+    position: relative;
+    width: 100%;
+}
+
+.select-box-phone input {
+    width: 100%;
+    border: .1rem solid transparent;
+    outline: none;
+}
+
+input[type="tel"] {
+    padding: 10px 14px 10px 14px;
+}
+
+.select-box-phone input:focus {
+    border: .1rem solid rgba(255, 255, 255, 0);
+}
+
+.selected-option-phone {
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-option-phone div {
+    position: relative;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 0px 0px 10px;
+    gap: 5px;
+}
+
+.selected-option-phone div strong {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(85, 105, 135, 1);
+    font-weight: 500;
+}
+
+.selected-option-phone div::after {
+    position: absolute;
+    content: "\f078";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    margin-left: 5px;
+}
+
+.select-box-phone .options-phone {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: .5rem;
+    display: none;
+    z-index: 10;
+}
+
+.select-box-phone .options-phone.active {
+    display: block;
+}
+
+.select-box-phone .options-phone::before {
+    position: absolute;
+    content: "";
+    left: 1rem;
+    top: -1.2rem;
+    width: 0;
+    height: 0;
+    border: .6rem solid transparent;
+    border-bottom-color: #62cec5;
+    color: #62cec5;
+}
+
+input.search-box-phone {
+    background-color: #62cec5;
+    color: #000;
+    border-radius: 8px 8px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 14px 10px 14px;
+}
+
+.select-box-phone ol {
+    list-style: none;
+    max-height: 200px;
+    overflow: overlay;
+}
+
+.select-box-phone ol::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+.select-box-phone ol::-webkit-scrollbar-thumb {
+    width: 0.4rem;
+    height: 3rem;
+    background-color: #ccc;
+    border-radius: .4rem;
+}
+
+.select-box-phone ol li {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.select-box-phone ol li.hide {
+    display: none;
+}
+
+.select-box-phone ol li:not(:last-child) {
+    border-bottom: .1rem solid #eee;
+}
+
+.select-box-phone ol li:hover {
+    background-color: rgb(198, 198, 198);
+}
+
+.select-box-phone ol li .country-name {
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    /* Ngăn chữ bị ngắt dòng */
+    overflow: hidden;
+    /* Ẩn phần vượt quá khung chứa */
+    text-overflow: ellipsis;
+    /* Hiển thị ba dấu chấm (...) khi chữ vượt quá khung chứa */
+    width: 200px;
+    /* Thiết lập chiều rộng cho phần tử container */
+    display: inline-block;
+    /* Hiển thị inline nhưng vẫn có thể thiết lập chiều rộng */
+}
+
+.select-box-phone ol li strong {
+    font-size: 14px;
+    color: black;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.select-box-phone ol li div {
+    display: flex;
+    align-items: center
 }

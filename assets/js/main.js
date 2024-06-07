@@ -226,9 +226,9 @@
 
         // ========================= Property Five Slick Slider Js Start ==============
         $('.property-five-slider').slick({
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             rtl: $("html").attr("dir") == "rtl" ? true : false,
             autoplaySpeed: 5000,
             speed: 1500,
@@ -238,6 +238,31 @@
             prevArrow: '<button type="button" class="slick-prev" id="slick-next-none"><i class="fas fa-arrow-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next slick-next-important" id="slick-next-none"><i class="fas fa-arrow-right"></i></button>',
             responsive: [{
+                    breakpoint: 1600,
+                    settings: {
+                        slidesToShow: 4, // Khi màn hình nhỏ hơn 800px
+                    }
+                },
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 4, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
+                    }
+                },
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 3, // Khi màn hình nhỏ hơn 800px
+                    }
+                },
+                {
+                    breakpoint: 1050,
+                    settings: {
+                        slidesToShow: 3, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
+                    }
+                },
+
+                {
                     breakpoint: 1050,
                     settings: {
                         slidesToShow: 3, // Khi màn hình nhỏ hơn 800px
@@ -285,9 +310,9 @@
         $(document).ready(function() {
             // Initialize Slick Slider
             $('.property-five-slider-blog').slick({
-                slidesToShow: 2,
+                slidesToShow: 3,
                 slidesToScroll: 1,
-                autoplay: false,
+                autoplay: true,
                 rtl: $("html").attr("dir") == "rtl" ? true : false,
                 autoplaySpeed: 2000,
                 speed: 1500,
@@ -297,6 +322,18 @@
                 prevArrow: $('.slick-prev-blog'),
                 nextArrow: $('.slick-next-blog'),
                 responsive: [{
+                        breakpoint: 1400,
+                        settings: {
+                            slidesToShow: 3, // Khi màn hình nhỏ hơn 800px
+                        }
+                    },
+                    {
+                        breakpoint: 1050,
+                        settings: {
+                            slidesToShow: 3, // Khi màn hình nhỏ hơn 800px và lớn hơn 550px
+                        }
+                    },
+                    {
                         breakpoint: 1050,
                         settings: {
                             slidesToShow: 3, // Khi màn hình nhỏ hơn 800px
