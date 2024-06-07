@@ -119,6 +119,8 @@
     background-image: var(--bs-accordion-btn-icon) !important;
     transform: var(--bs-accordion-btn-icon-transform);
     margin-bottom: 12px;
+    margin-left: 10px;
+    margin-top: 7px;
 }
 
 .common-input-phone {
@@ -209,6 +211,19 @@
 /* Điện thoại iphone SE */
 
 @media (max-width: 395px) {
+    .chan-trang-tham-dinh {
+        display: flex !important;
+        align-items: center !important;
+        gap: 30px;
+        justify-content: space-between !important;
+    }
+    .footer-left-end,
+    .footer-center-end {
+        display: flex;
+        justify-content: flex-start !important;
+        align-content: flex-end;
+        align-items: center;
+    }
     .section-heading__inner-blog {
         display: none;
     }
@@ -324,13 +339,13 @@
         color: rgba(58, 71, 91, 1) !important;
         border: 0px solid var(--border-color) !important;
         border-radius: 6px !important;
-        margin: 0px 0px 1px 0px;
+        margin: 0px 0px 10px 0px;
     }
     .mt-1-select {
         margin-top: 2px;
     }
     .select-btn-multiselect {
-        margin: 0px 0px 2px 0px;
+        margin: 10px 0px 10px 0px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -366,12 +381,12 @@
         border-radius: 6px
     }
     .nested-list {
-        display: none;
         position: absolute;
-        left: 10%;
         top: 103px;
         margin-top: 5px;
-        width: 315px !important;
+        width: 306px !important;
+        transform: translateX(-100%);
+        right: 0;
     }
     .items-multiselect-con {
         display: flex;
@@ -480,12 +495,6 @@
         margin-left: 0;
         width: 100%;
     }
-    .chan-trang-tham-dinh {
-        display: flex;
-        align-items: center;
-        /* gap: 30px; */
-        justify-content: space-between;
-    }
     .chan-trang-tham-dinh img {
         width: 107px;
     }
@@ -500,6 +509,19 @@
 /* Điện thoại từ 414px */
 
 @media (min-width: 400px) and (max-width: 450px) {
+    .chan-trang-tham-dinh {
+        display: flex !important;
+        align-items: center !important;
+        gap: 30px;
+        justify-content: space-between !important;
+    }
+    .footer-left-end,
+    .footer-center-end {
+        display: flex;
+        justify-content: flex-start !important;
+        align-content: flex-end;
+        align-items: center;
+    }
     .section-heading__inner-blog {
         display: none;
     }
@@ -639,7 +661,7 @@
         border-radius: 6px;
         cursor: pointer;
         background-color: white;
-        margin: 0px 0px 2px 0px;
+        margin: 10px 0px 10px 0px;
     }
     .selected-option {
         background-color: white;
@@ -658,7 +680,7 @@
         width: 95%;
     }
     .custom-select {
-        margin: 0px 0px 1px 0px;
+        margin: 0px 0px 10px 0px;
     }
     .select-btn-multiselect .btn-select-multiselect {
         font-size: 14px !important;
@@ -671,12 +693,12 @@
         border-radius: 6px
     }
     .nested-list {
-        display: none;
         position: absolute;
-        left: 20%;
         top: 103px;
         margin-top: 5px;
         width: 315px !important;
+        transform: translateX(-101%);
+        right: 0;
     }
     .items-multiselect-con {
         display: flex;
@@ -791,19 +813,19 @@
     .section-heading__inner-blog {
         display: none;
     }
-    .nested-list {
-        display: none;
-        position: absolute;
-        left: 70% !important;
-        top: 103px;
-        margin-top: 5px;
-        width: 315px !important;
-    }
     .chan-trang-tham-dinh {
         display: flex;
         align-items: center;
-        /* gap: 30px; */
+        gap: 30px;
         justify-content: space-between;
+    }
+    .nested-list {
+        position: absolute;
+        top: 103px;
+        margin-top: 5px;
+        width: 315px !important;
+        transform: translateX(0%);
+        left: 0;
     }
     .chan-trang-tham-dinh img {
         width: 107px;
@@ -957,6 +979,13 @@
 }
 
 @media (min-width: 700px) and (max-width: 950px) {
+    .footer-left-end,
+    .footer-center-end {
+        display: flex;
+        justify-content: flex-start !important;
+        align-content: flex-end;
+        align-items: center;
+    }
     .banner-overlay__slider {
         height: 500px;
     }
@@ -968,9 +997,9 @@
     }
     .chan-trang-tham-dinh {
         display: flex;
-        align-items: center;
-        /* gap: 30px; */
-        justify-content: space-between;
+        gap: 30px;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
     .chan-trang-tham-dinh img {
         width: 107px;
@@ -1637,6 +1666,50 @@
     }
 }
 
+@media (min-width: 2250px) {
+    .arrow-style-two .slick-prev {
+        left: 0%;
+        top: 40%;
+    }
+    .arrow-style-two .slick-arrow {
+        top: 40%;
+        right: 10%;
+    }
+    .property-type-five-item__thumb {
+        width: 100% !important;
+        overflow: hidden;
+    }
+    .col-center-display-footer {
+        display: flex;
+        justify-content: center;
+    }
+    #slick-next-none {
+        display: none;
+    }
+    .property-item__thumb-image {
+        position: relative;
+        overflow: hidden;
+        height: 600px;
+        display: flex;
+        width: 100%;
+    }
+    .banner-overlay__slider {
+        background-image: url(../images/thumbs/banner-eight.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+        padding: clamp(5rem, -2.607rem + 15.848vw, 11.25rem) 0;
+        height: 800px;
+    }
+    .arrow-style-two {
+        position: relative;
+        padding: 60px 0px;
+        margin-left: 750px;
+    }
+}
+
 @media (max-width: 550px) and (min-width: 501px) {
     .col-550 {
         flex: 0 0 50%;
@@ -1737,13 +1810,13 @@ input[type="tel"] {
     width: 0;
     height: 0;
     border: .6rem solid transparent;
-    border-bottom-color: #62cec5;
-    color: #62cec5;
+    border-bottom-color: #000000;
+    color: #000000;
 }
 
 input.search-box-phone {
-    background-color: #62cec5;
-    color: #000;
+    background-color: #000000;
+    color: #ffffff;
     border-radius: 8px 8px 0 0;
     font-size: 14px;
     line-height: 20px;
@@ -1800,6 +1873,7 @@ input.search-box-phone {
     /* Thiết lập chiều rộng cho phần tử container */
     display: inline-block;
     /* Hiển thị inline nhưng vẫn có thể thiết lập chiều rộng */
+    color: #000000;
 }
 
 .select-box-phone ol li strong {
@@ -1812,4 +1886,29 @@ input.search-box-phone {
 .select-box-phone ol li div {
     display: flex;
     align-items: center
+}
+
+.footer-top-end {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-left-end,
+.footer-center-end {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.chan-trang-tham-dinh {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.options-list li:hover {
+    background: rgb(98, 206, 197) !important;
+    color: white;
 }
