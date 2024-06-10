@@ -724,8 +724,7 @@
 }
 
 .flx-align,
-.common-radio,
-.common-check {
+.common-radio {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -2555,7 +2554,7 @@ button:focus {
 }
 
 .common-input--withLeftIcon {
-    padding-left: 50px !important;
+    padding-left: 10px !important;
 }
 
 .common-input::placeholder {
@@ -2578,6 +2577,69 @@ button:focus {
 
 
 /* input End */
+
+.select-has-icon-flex {
+    display: flex;
+}
+
+.select-has-icon-flex .select-has-icon {
+    flex: 3;
+}
+
+.select-has-icon-flex .select-has-icon select {
+    padding: 12px !important;
+}
+
+.select-has-icon-flex .list-grid {
+    flex: 1;
+}
+
+.select-has-icon .selected-option {
+    background-color: white;
+    border: 1px solid #223757;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+#options-list-li {
+    padding: 8px;
+    padding: 16px 15px 16px 35px;
+    align-items: center;
+    width: 100% !important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    background-color: rgb(34, 55, 87);
+    color: white;
+    border-radius: 6px;
+}
+
+.pd-right {
+    padding-right: 60px;
+}
+
+#selected-option-bolder {
+    border: 1px solid #bebebe;
+}
+
+
+/* Tùy chỉnh phần tử option trong Select2 */
+
+.select2-container .select2-results__option {
+    padding: 8px 16px;
+    /* Khoảng cách bên trong của option */
+    color: #495057;
+    /* Màu chữ của option */
+    background-color: #ffffff;
+    /* Màu nền của option */
+}
+
+.select2-container .select2-results__option--highlighted {
+    background-color: #e9ecef;
+    /* Màu nền của option khi di chuột */
+    color: #212529;
+    /* Màu chữ của option khi di chuột */
+}
 
 
 /* input icon */
@@ -2770,19 +2832,39 @@ input[type=number] {
 
 /* Custom Checkbox Design */
 
-.common-check {
-    margin-bottom: 16px;
+.common-check-list {
+    padding: 15px 16px 15px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
 }
 
-.common-check:last-child {
+.common-check-list:hover {
+    background: #62cec5;
+    color: white !important;
+}
+
+.common-check-list:hover>label {
+    color: white !important;
+}
+
+.common-check-list label {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+}
+
+.common-check-list:last-child {
     margin-bottom: 0;
 }
 
-.common-check a {
+.common-check-list a {
     display: inline;
 }
 
-.common-check .form-check-input {
+.common-check-list .form-check-input {
     transition: 0.2s linear;
     box-shadow: none;
     background-color: transparent;
@@ -2798,17 +2880,17 @@ input[type=number] {
     margin-top: 0;
 }
 
-.common-check .form-check-input:checked {
+.common-check-list .form-check-input:checked {
     background-color: hsl(var(--main)) !important;
     border-color: hsl(var(--main)) !important;
     box-shadow: none;
 }
 
-.common-check .form-check-input:checked[type=checkbox] {
+.common-check-list .form-check-input:checked[type=checkbox] {
     background-image: none;
 }
 
-.common-check .form-check-input:checked::before {
+.common-check-list .form-check-input:checked::before {
     position: absolute;
     content: "\f00c";
     /* Dấu tích Font Awesome */
@@ -2822,30 +2904,254 @@ input[type=number] {
     transform: translate(-50%, -50%);
 }
 
-.common-check .form-check-label {
-    font-weight: 500;
-    width: calc(100% - 18px);
-    padding-left: 12px;
+.common-check-list .form-check-label {
+    width: calc(100% - 30px);
     cursor: pointer;
-    font-size: 0.875rem;
-    color: hsl(var(--heading-color));
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
     font-family: var(--poppins-font);
+    line-height: 24px;
+    font-weight: 400;
 }
 
-@media screen and (max-width: 424px) {
-    .common-check label {
-        font-size: 0.9375rem;
-    }
+.common-check-list .width-height-24px {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    width: 24px;
+    height: 24px;
 }
 
-@media screen and (max-width: 424px) {
-    .common-check a {
-        font-size: 0.9375rem;
-    }
+.sidebar_item_border {
+    border: 1px solid rgba(213, 218, 225, 1);
+    border-radius: 8px
+}
+
+.common-check-list .width-height-24px:checked {
+    background-color: rgba(59, 130, 246, 1) !important;
+}
+
+.search-sidebar__title {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: rgba(51, 63, 81, 1);
+    margin: 0px 0px 5px 0px !important;
+}
+
+.input-container-price {
+    display: flex;
+    gap: 10px;
+    /* Khoảng cách giữa hai input */
+}
+
+.input-container-price .position-relative {
+    position: relative;
+    flex: 1;
+    /* Để hai input chia đều không gian */
+}
+
+.common-input-price {
+    width: 100%;
+    padding: 13px 14px;
+    /* Đảm bảo khoảng trống cho icon */
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: 400;
+    outline: none;
+    width: 100%;
+    background-color: white !important;
+    border: 1px solid var(--border-color);
+    color: hsl(var(--black));
+    line-height: 1;
+    font-size: 1.0625rem;
+}
+
+.common-input-price:focus {
+    border-color: hsl(var(--main));
+    box-shadow: none;
+}
+
+
+/* CSS cho placeholder */
+
+.common-input-price::placeholder {
+    color: rgba(187, 195, 207, 1);
+    font-style: 14px;
+    line-height: 20px !important;
+}
+
+.input-icon--right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: rgba(187, 195, 207, 1);
+    font-size: 14px;
+    line-height: 20px !important;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.line-height-1 {
+    line-height: 1;
+}
+
+.btn-group-purchase-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group-purchase-icon span {
+    font-style: 22px;
+}
+
+.list-grid-item-wrapper {
+    padding: 30px;
+}
+
+
+/* Hướng */
+
+.list-items-multiselec-huong-chinh {
+    position: absolute;
+    margin-top: 5px;
+    border-radius: 6px;
+    background-color: rgb(34, 55, 87);
+    color: white;
+    display: none;
+    z-index: 10;
+    width: 253px;
+    max-height: 360px;
+    top: 45px;
+    margin-top: 5px;
+    transform: translateX(0px);
+    right: 0;
+}
+
+.list-items-multiselec-huong-chinh .items-multiselect-huong-chinh {
+    padding: 12px;
+    cursor: pointer;
+}
+
+.list-items-multiselec-huong-chinh .items-multiselect-huong-chinh:hover {
+    background-color: #62CEC5;
+    color: white;
+    border-radius: 6px;
+}
+
+#chon-huong.open~.list-items-multiselec-huong-chinh {
+    display: block;
+}
+
+.list-items-multiselec-huong-chinh .items-multiselect-huong-chinh {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.items-multiselect-huong-chinh .checkbox-multiselect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    width: 18px;
+    border-radius: 6px;
+    margin-right: 12px;
+    font-size: 12px;
+    border: 1.5px solid white;
+    background: #62cec5;
+    border-color: #5ac0b9;
+}
+
+.items-multiselect-huong-chinh .checkbox-multiselect i {
+    color: white;
+    font-size: 14px;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.checked-multiselect .icon-plus {
+    display: none;
+}
+
+.checked-multiselect .icon-minus {
+    display: inline;
+}
+
+.icon-minus {
+    display: none;
+}
+
+.breadcrumb__title {
+    color: hsl(0deg 0% 0%);
+    font-size: clamp(1.875rem, -1.016rem + 6.022vw, 4.25rem);
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.breadcrumb__wrapper {
+    text-align: left;
+}
+
+
+/* hướng phụ */
+
+.list-items-multiselec-huong-chinh .slide {
+    clear: both;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    text-align: center;
+    transition: height .4s ease;
+}
+
+.list-items-multiselec-huong-chinh .slide li {
+    padding: 30px;
+}
+
+#touch {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}
+
+#touch:checked+.slide {
+    height: 300px;
 }
 
 
 /* Custom Radio Design */
+
+.common-check {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.common-check .form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin: 0px;
+}
+
+.common-check .form-check-input:checked::before {
+    position: absolute;
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: hsl(var(--white, 0, 0, 100%));
+    font-size: 0.6875rem;
+    transform: translate(50%, 11%);
+}
 
 .common-radio {
     margin-bottom: 16px;
@@ -3433,6 +3739,7 @@ input[type=number] {
 .header {
     background-color: hsl(var(--white));
     transition: 0.2s linear;
+    border-bottom: 1px solid rgba(213, 218, 225, 1);
 }
 
 @media screen and (max-width: 991px) {
@@ -5223,10 +5530,6 @@ button.slick-next {
     padding: clamp(5rem, -1.086rem + 12.678vw, 10rem) 0;
 }
 
-.breadcrumb__wrapper {
-    text-align: center;
-}
-
 .breadcrumb__img {
     position: absolute;
     left: 50%;
@@ -5235,24 +5538,19 @@ button.slick-next {
     z-index: -1;
 }
 
-.breadcrumb__title {
-    margin-bottom: 20px;
-    color: hsl(var(--white));
-    font-family: var(--poppins-font);
-    font-size: clamp(1.875rem, -1.016rem + 6.022vw, 4.25rem);
-}
-
 .breadcrumb__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
 }
 
 .breadcrumb__item {
-    font-weight: 400;
-    font-size: 1.125rem;
-    color: hsl(var(--white));
+    color: rgba(85, 105, 135, 1);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 991px) {
@@ -5261,14 +5559,24 @@ button.slick-next {
     }
 }
 
+.fa-angle-right:before {
+    content: "\f105";
+    font-size: 12px !important;
+}
+
 .breadcrumb__link {
-    font-weight: inherit;
-    color: hsl(var(--white));
-    font-size: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(59, 130, 246, 1);
 }
 
 .breadcrumb__link:hover {
     color: hsl(var(--main));
+}
+
+.background-img-col-right {
+    background: #f1f1f1;
 }
 
 
@@ -5940,7 +6248,8 @@ button.slick-next {
 /* ============================ Latest property Css Start ==================== */
 
 .property-filter {
-    margin-bottom: clamp(1.5rem, -1.239rem + 5.705vw, 3.75rem);
+    padding: 30px 30px 20px 30px;
+    border-bottom: 1px solid rgba(213, 218, 225, 1);
 }
 
 .property-filter__bottom {
@@ -5954,9 +6263,34 @@ button.slick-next {
     display: none !important;
 }
 
+.form-right-list .backgroups-input-ssearch {
+    padding: 0px 2px 0px 20px;
+    border: 1px solid #b8b8b8;
+    background: white;
+    border-radius: 8px;
+}
+
+.form-right-list .backgroups-input-ssearch .search-button-banner {
+    padding: 6px 15px;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    cursor: pointer;
+    line-height: 24px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.form-right-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media (min-width: 360px) {
     .list-grid {
         display: flex !important;
+        justify-content: flex-end;
     }
     .list-grid__button {
         width: 40px;
@@ -5968,10 +6302,12 @@ button.slick-next {
         justify-content: center;
         align-items: center;
         transition: 0.2s linear;
+        background: white;
+        color: black;
     }
     .list-grid__button.active {
-        border-color: hsl(var(--main)) !important;
-        background: hsl(var(--main)) !important;
+        border-color: hsl(217.22deg 91.22% 59.8%) !important;
+        background: hsl(217.22deg 91.22% 59.8%) !important;
         color: hsl(var(--white)) !important;
     }
     .list-grid__button:hover {
@@ -10268,13 +10604,59 @@ button.slick-next {
 
 /* ===================================== Search Sidebar Css Start =================================*/
 
+.container-fluid-list-bds {
+    border-bottom: 1px solid rgba(213, 218, 225, 1);
+}
+
+.btn-group-create-list {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(213, 218, 225, 1);
+    border-radius: 6px;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-group-create-list button {
+    padding: 10px 5px;
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    border-radius: 6px;
+}
+
+.btn-group-create-list button:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 0.01rem;
+    height: 70%;
+    background-color: rgba(213, 218, 225, 1);
+}
+
+.btn-group-create-list button:hover {
+    background-color: rgba(98, 206, 197, 1);
+    color: rgb(255, 255, 255);
+}
+
+.btn-group-create-list button.active {
+    background-color: rgba(98, 206, 197, 1);
+    color: rgb(255, 255, 255);
+}
+
 .search-sidebar {
     background-color: hsl(var(--white));
-    box-shadow: var(--box-shadow);
     padding: 32px;
     transition: 0.3s ease-in-out;
     height: 100%;
-    border-radius: 5px;
+    border-right: 1px solid rgba(213, 218, 225, 1);
 }
 
 @media screen and (max-width: 1199px) {
@@ -10284,7 +10666,7 @@ button.slick-next {
 }
 
 .search-sidebar__item {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .search-sidebar__item:last-child {

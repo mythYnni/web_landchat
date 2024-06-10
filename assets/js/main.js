@@ -1,4 +1,5 @@
 (function($) {
+
     $(document).ready(function() {
         $('.banner-overlay__slider').vegas({
             overlay: true,
