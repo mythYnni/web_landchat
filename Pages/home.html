@@ -32,6 +32,10 @@
     <link rel="stylesheet" href="../assets/css/responsize.css">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- Vegas CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.css">
+    <!-- wow js -->
+    <link rel="stylesheet" href="../assets/wowjs\/node_modules/wow.js/css/libs/animate.css">
 </head>
 
 <body>
@@ -94,79 +98,6 @@
     </div>
     <!-- ==================== Mobile Menu End Here ==================== -->
 
-    <!-- ==================== Right Offcanvas Start Here ==================== -->
-    <div class="common-offcanvas d-lg-block d-none">
-        <div class="flx-between">
-            <a href class="mobile-menu__logo">
-                <img src="../assets/images/logo/white-logo.png" alt="Logo">
-            </a>
-            <button type="button" class="close-button d-flex position-relative top-0 end-0">
-                    <i class="las la-times"></i> </button>
-        </div>
-
-        <div class="search-box mt-5">
-            <form action="#">
-                <input type="text" class="common-input common-input--light" placeholder="Tìm Kiếm..." style="background-color: #383838ad !important; color: white;">
-                <button type="submit" class="icon"> <i
-                    class="icon-magnifier"></i> </button>
-            </form>
-        </div>
-
-        <div class="mobile-menu__menu">
-            <ul class="nav-menu flx-align nav-menu--mobile">
-                <li class="nav-menu__item">
-                    <a href class="nav-menu__link__mobile">Quản lý tin
-                            đăng</a>
-                </li>
-                <li class="nav-menu__item">
-                    <a href class="nav-menu__link__mobile">Thay đổi thông
-                            tin cá nhân</a>
-                </li>
-                <li class="nav-menu__item">
-                    <a href class="nav-menu__link__mobile">Thay đổi mật
-                            khẩu</a>
-                </li>
-                <li class="nav-menu__item">
-                    <a href class="nav-menu__link__mobile">Nập tiền</a>
-                </li>
-                <li class="nav-menu__item">
-                    <a href class="nav-menu__link__mobile">Đăng xuất</a>
-                </li>
-            </ul>
-            <a href="#" class="btn btn-outline-light d-lg-none d-block mt-4">Đăng ký
-                    mua <span class="icon-right text-gradient"> <i
-                            class="fas fa-arrow-right"></i> </span> </a>
-        </div>
-
-        <ul class="address-list mt-5">
-            <li class="address-list__item flx-align">
-                <div class="address-list__content">
-                    <p class="address-list__text">Địa chỉ: Lô 39 tầng 2A Thăng Long Garden, số 250 phố Minh Khai, phường Minh Khai, Quận Hai Bà Trưng, Hà Nội</p>
-                </div>
-            </li>
-            <li class="address-list__item flx-align">
-                <div class="address-list__content">
-                    <a href="tel:+84936601601" class="address-list__text">Liên hệ: 0936.601.601</a>
-                </div>
-            </li>
-        </ul>
-
-        <ul class="social-list">
-            <li class="social-list__item"><a href="https://www.facebook.com/" class="social-list__link flx-center"><i
-                            class="fab fa-facebook-f"></i></a> </li>
-            <li class="social-list__item">
-                <a href="https://www.twitter.com/" class="social-list__link flx-center"> <i class="fab fa-twitter"></i></a>
-            </li>
-            <li class="social-list__item">
-                <a href="https://www.linkedin.com/" class="social-list__link flx-center"> <i class="fab fa-linkedin-in"></i></a>
-            </li>
-            <li class="social-list__item">
-                <a href="https://www.pinterest.com/" class="social-list__link flx-center"> <i class="fab fa-instagram"></i></a>
-            </li>
-        </ul>
-    </div>
-    <!-- ==================== Right Offcanvas End Here ==================== -->
-
     <main>
         <!-- ==================== Header Start Here ==================== -->
         <header class="header bg-transparent">
@@ -205,16 +136,55 @@
                     <!-- Menu End  -->
 
                     <!-- Header Right start -->
-                    <div class="header-right flx-align">
-                        <button type="button" class="offcanvas-btn d-lg-block d-none avatar-default">
-                                <img src="/../assets/images/thumbs/team1.png"
+                    <!-- Header Right start -->
+                    <div class="header-right flx-align" id="gap-menu">
+                        <div class="location d-lg-block d-none">
+                            <p class="selected-location">
+                                <span class="icon-map-pin icon-location"></span>
+                                <span class="location-name">Hà Nội</span>
+                            </p>
+                            <div class="options-location">
+                                <input type="text" class="search-box-location" placeholder="Thành phố">
+                                <ol class="location-list">
+                                    <!-- Danh sách các tỉnh thành sẽ được chèn ở đây -->
+                                </ol>
+                            </div>
+                        </div>
+
+                        <button type="button" class="d-lg-block d-none avatar-default">
+                                <img src="../assets/images/thumbs/team1.png"
                                     class="img-fluid" alt="avatar">
                             </button>
-                        <a href class="btn-buy btn-main-buy d-lg-block">
+                        <ul id="account-info" class="nav-menu flx-align profile-user-hover">
+                            <li class="nav-menu__item">
+                                <a href="#" class="nav-menu__link profile-user-link">Quản
+                                        lý tin đăng</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#" class="nav-menu__link profile-user-link">Thay
+                                        đổi thông tin cá nhân</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#" class="nav-menu__link profile-user-link">Thay
+                                        đổi mật khẩu</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#" class="nav-menu__link profile-user-link">Nạp
+                                        tiền</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#" class="nav-menu__link profile-user-link" style="display: flex; justify-content: space-between;">
+                                        Đăng xuất <span><i
+                                                class="icon-sign-out"></i></span>
+                                    </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-buy btn-main-buy d-lg-block">
                                 Đăng ký mua
                             </a>
-                        <button type="button" class="toggle-mobileMenu d-lg-none ms-3"> <i
-                                    class="las la-bars"></i> </button>
+                        <button type="button" class="toggle-mobileMenu d-lg-none ms-3">
+                                <i class="las la-bars"></i>
+                            </button>
                     </div>
                     <!-- Header Right End  -->
                 </nav>
@@ -224,198 +194,197 @@
 
         <!-- ============================= Banner Three Start ============================= -->
         <section class="banner-overlay">
-            <div class="banner-overlay__slider">
-                <img src="../assets/images/thumbs/dotted-bg.png" alt class="banner-three__dotted">
-                <div class="container container-two">
-                    <div class="banner-overlay__content z-index-1">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="banner-inner position-relative">
-                                    <div class="banner-content">
-                                        <h1 class="banner-content__title">Mua Nhà <br> <span class="position-relative d-inline">
-                                                    Trong
-                                                    <img
-                                                        src="../assets/images/shapes/curve-shape.png"
-                                                        alt class="curve-shape">
-                                                </span> Phút Mốt
-                                        </h1>
-                                    </div>
+            <div class="banner-overlay__slider" style="background-image: url(../assets/images/thumbs/banner-eight.jpg);" id="banner-heaght-image">
+            </div>
+            <div class="container container-two banner-overlay-container-two">
+                <div class="banner-overlay__content z-index-1">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="banner-inner position-relative">
+                                <div class="banner-content">
+                                    <h1 class="banner-content__title">Mua Nhà <br> <span class="position-relative d-inline">
+                                                Trong
+                                                <img
+                                                    src="../assets/images/shapes/curve-shape.png"
+                                                    alt class="curve-shape">
+                                            </span> Phút Mốt
+                                    </h1>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <ul class="common-tab nav nav-pills" id="pills-tabThree" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="pills-rent-tab" data-bs-toggle="pill" data-bs-target="#pills-rent" type="button" role="tab" aria-controls="pills-rent" aria-selected="true">Mua</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="pills-buy-tab" data-bs-toggle="pill" data-bs-target="#pills-buy" type="button" role="tab" aria-controls="pills-buy" aria-selected="false">Thuê</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="pills-sell-tab" data-bs-toggle="pill" data-bs-target="#pills-sell" type="button" role="tab" aria-controls="pills-sell" aria-selected="false">Môi
-                                                giới</button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content" id="pills-tabThreeContent">
-                                    <div class="tab-pane fade show active" id="pills-rent" role="tabpanel" aria-labelledby="pills-rent-tab" tabindex="0">
-                                        <div class="filter">
-                                            <form action="#">
-                                                <div class="row gy-sm-4 gy-3">
-                                                    <div class="col-12">
-                                                        <div class="search-container-banner">
-                                                            <span class="icon-search-banner"><i
-                                                                        class="fas fa-search"></i></span>
-                                                            <input type="text" class="search-input-banner" placeholder="Đường phố, quận huyện, dự án,...">
-                                                            <button class="search-button-banner">Tìm
-                                                                    mua</button>
-                                                        </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <ul class="common-tab nav nav-pills" id="pills-tabThree" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-rent-tab" data-bs-toggle="pill" data-bs-target="#pills-rent" type="button" role="tab" aria-controls="pills-rent" aria-selected="true">Mua</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-buy-tab" data-bs-toggle="pill" data-bs-target="#pills-buy" type="button" role="tab" aria-controls="pills-buy" aria-selected="false">Thuê</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-sell-tab" data-bs-toggle="pill" data-bs-target="#pills-sell" type="button" role="tab" aria-controls="pills-sell" aria-selected="false">Môi
+                                            giới</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabThreeContent">
+                                <div class="tab-pane fade show active" id="pills-rent" role="tabpanel" aria-labelledby="pills-rent-tab" tabindex="0">
+                                    <div class="filter">
+                                        <form action="#">
+                                            <div class="row gy-sm-4 gy-3">
+                                                <div class="col-12">
+                                                    <div class="search-container-banner">
+                                                        <span class="icon-search-banner"><i
+                                                                    class="icon-magnifier"></i></span>
+                                                        <input type="text" class="search-input-banner" placeholder="Đường phố, quận huyện, dự án,...">
+                                                        <button class="search-button-banner">Tìm
+                                                                mua</button>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
-                                        <div class="row mt-1-select">
-                                            <div class="col-lg-3 col-sm-6 col-xs-6">
-                                                <div class="select-btn-multiselect icon-black">
-                                                    <span class="btn-select-multiselect">
-                                                            Loại bất động sản
-                                                        </span>
-                                                    <span class="btn-select-icon">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="row mt-1-select">
+                                        <div class="col-lg-3 col-sm-6 col-xs-6">
+                                            <div class="select-btn-multiselect icon-black">
+                                                <span class="btn-select-multiselect">
+                                                        Loại bất động sản
+                                                    </span>
+                                                <span class="btn-select-icon">
+                                                        <i
+                                                            class="fas fa-solid fa-chevron-down"></i>
+                                                    </span>
+                                            </div>
+                                            <ul class="list-items-multiselect">
+                                                <li class="items-multiselect">
+                                                    <span class="test-multiselect">Nhà</span>
+                                                    <span class="checkbox-multiselect">
                                                             <i
-                                                                class="fas fa-solid fa-chevron-down"></i>
+                                                                class="fas fa-solid fa-check check-icon-multiselect"></i>
                                                         </span>
+                                                </li>
+                                                <li class="items-multiselect has-nested">
+                                                    <span class="test-multiselect">Đất</span>
+                                                    <span class="checkbox-multiselect">
+                                                            <i
+                                                                class="fas fa-solid fa-check check-icon-multiselect"></i>
+                                                        </span>
+                                                    <ul class="nested-list list-items-multiselect">
+                                                        <li class="items-multiselect-con">
+                                                            <span class="test-multiselect">Đất
+                                                                    nền thổ
+                                                                    cư</span>
+                                                            <span class="checkbox-multiselect-con">
+                                                                    <i
+                                                                        class="fas fa-solid fa-check check-icon-multiselect"></i>
+                                                                </span>
+                                                        </li>
+                                                        <li class="items-multiselect-con">
+                                                            <span class="test-multiselect">Đất
+                                                                    phân lô
+                                                                    dự
+                                                                    án</span>
+                                                            <span class="checkbox-multiselect-con">
+                                                                    <i
+                                                                        class="fas fa-solid fa-check check-icon-multiselect"></i>
+                                                                </span>
+                                                        </li>
+                                                        <li class="items-multiselect-con">
+                                                            <span class="test-multiselect">Đất
+                                                                    mặt
+                                                                    phố/Kinh
+                                                                    doanh
+                                                                    được</span>
+                                                            <span class="checkbox-multiselect-con">
+                                                                    <i
+                                                                        class="fas fa-solid fa-check check-icon-multiselect"></i>
+                                                                </span>
+                                                        </li>
+                                                        <li class="items-multiselect-con">
+                                                            <span class="test-multiselect">Đất
+                                                                    doanh
+                                                                    nghiệp</span>
+                                                            <span class="checkbox-multiselect-con">
+                                                                    <i
+                                                                        class="fas fa-solid fa-check check-icon-multiselect"></i>
+                                                                </span>
+                                                        </li>
+                                                        <li class="items-multiselect-con">
+                                                            <span class="test-multiselect">Đất
+                                                                    Nông
+                                                                    nghiệp/Sinh
+                                                                    thái</span>
+                                                            <span class="checkbox-multiselect-con">
+                                                                    <i
+                                                                        class="fas fa-solid fa-check check-icon-multiselect"></i>
+                                                                </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-xs-6">
+                                            <div class="custom-select" id="custom-select">
+                                                <div class="selected-option">Khoảng giá
                                                 </div>
-                                                <ul class="list-items-multiselect">
-                                                    <li class="items-multiselect">
-                                                        <span class="test-multiselect">Nhà</span>
-                                                        <span class="checkbox-multiselect">
-                                                                <i
-                                                                    class="fas fa-solid fa-check check-icon-multiselect"></i>
-                                                            </span>
+                                                <ul class="options-list" style="display: none;">
+                                                    <li value="1">Khoảng giá
                                                     </li>
-                                                    <li class="items-multiselect has-nested">
-                                                        <span class="test-multiselect">Đất</span>
-                                                        <span class="checkbox-multiselect">
-                                                                <i
-                                                                    class="fas fa-solid fa-check check-icon-multiselect"></i>
-                                                            </span>
-                                                        <ul class="nested-list list-items-multiselect">
-                                                            <li class="items-multiselect-con">
-                                                                <span class="test-multiselect">Đất
-                                                                        nền thổ
-                                                                        cư</span>
-                                                                <span class="checkbox-multiselect-con">
-                                                                        <i
-                                                                            class="fas fa-solid fa-check check-icon-multiselect"></i>
-                                                                    </span>
-                                                            </li>
-                                                            <li class="items-multiselect-con">
-                                                                <span class="test-multiselect">Đất
-                                                                        phân lô
-                                                                        dự
-                                                                        án</span>
-                                                                <span class="checkbox-multiselect-con">
-                                                                        <i
-                                                                            class="fas fa-solid fa-check check-icon-multiselect"></i>
-                                                                    </span>
-                                                            </li>
-                                                            <li class="items-multiselect-con">
-                                                                <span class="test-multiselect">Đất
-                                                                        mặt
-                                                                        phố/Kinh
-                                                                        doanh
-                                                                        được</span>
-                                                                <span class="checkbox-multiselect-con">
-                                                                        <i
-                                                                            class="fas fa-solid fa-check check-icon-multiselect"></i>
-                                                                    </span>
-                                                            </li>
-                                                            <li class="items-multiselect-con">
-                                                                <span class="test-multiselect">Đất
-                                                                        doanh
-                                                                        nghiệp</span>
-                                                                <span class="checkbox-multiselect-con">
-                                                                        <i
-                                                                            class="fas fa-solid fa-check check-icon-multiselect"></i>
-                                                                    </span>
-                                                            </li>
-                                                            <li class="items-multiselect-con">
-                                                                <span class="test-multiselect">Đất
-                                                                        Nông
-                                                                        nghiệp/Sinh
-                                                                        thái</span>
-                                                                <span class="checkbox-multiselect-con">
-                                                                        <i
-                                                                            class="fas fa-solid fa-check check-icon-multiselect"></i>
-                                                                    </span>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
+                                                    <li value="2">Bangladesh</li>
+                                                    <li value="3">Japan</li>
+                                                    <li value="4">Korea</li>
+                                                    <li value="5">Singapore</li>
+                                                    <li value="6">Germany</li>
+                                                    <li value="7">Thailand</li>
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-3 col-sm-6 col-xs-6">
-                                                <div class="custom-select" id="custom-select">
-                                                    <div class="selected-option">Khoảng giá
-                                                    </div>
-                                                    <ul class="options-list" style="display: none;">
-                                                        <li value="1">Khoảng giá
-                                                        </li>
-                                                        <li value="2">Bangladesh</li>
-                                                        <li value="3">Japan</li>
-                                                        <li value="4">Korea</li>
-                                                        <li value="5">Singapore</li>
-                                                        <li value="6">Germany</li>
-                                                        <li value="7">Thailand</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-xs-6">
-                                                <div class="custom-select" id="custom-select-huong">
-                                                    <div class="selected-option">Hướng</div>
-                                                    <ul class="options-list" style="display: none;">
-                                                        <li value="1">Hướng</li>
-                                                        <li value="2">Bangladesh</li>
-                                                        <li value="3">Japan</li>
-                                                        <li value="4">Korea</li>
-                                                        <li value="5">Singapore</li>
-                                                        <li value="6">Germany</li>
-                                                        <li value="7">Thailand</li>
-                                                    </ul>
-                                                </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-xs-6">
+                                            <div class="custom-select" id="custom-select-huong">
+                                                <div class="selected-option">Hướng</div>
+                                                <ul class="options-list" style="display: none;">
+                                                    <li value="1">Hướng</li>
+                                                    <li value="2">Bangladesh</li>
+                                                    <li value="3">Japan</li>
+                                                    <li value="4">Korea</li>
+                                                    <li value="5">Singapore</li>
+                                                    <li value="6">Germany</li>
+                                                    <li value="7">Thailand</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="pills-buy" role="tabpanel" aria-labelledby="pills-buy-tab" tabindex="0">
-                                        <div class="filter">
-                                            <form action="#">
-                                                <div class="row gy-sm-4 gy-3">
-                                                    <div class="col-12">
-                                                        <div class="search-container-banner">
-                                                            <span class="icon-search-banner"><i
-                                                                        class="fas fa-search"></i></span>
-                                                            <input type="text" class="search-input-banner" placeholder="Đường phố, quận huyện, dự án,...">
-                                                            <button class="search-button-banner">Tìm
-                                                                    mua</button>
-                                                        </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-buy" role="tabpanel" aria-labelledby="pills-buy-tab" tabindex="0">
+                                    <div class="filter">
+                                        <form action="#">
+                                            <div class="row gy-sm-4 gy-3">
+                                                <div class="col-12">
+                                                    <div class="search-container-banner">
+                                                        <span class="icon-search-banner"><i
+                                                                    class="fas fa-search"></i></span>
+                                                        <input type="text" class="search-input-banner" placeholder="Đường phố, quận huyện, dự án,...">
+                                                        <button class="search-button-banner">Tìm
+                                                                mua</button>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="tab-pane fade" id="pills-sell" role="tabpanel" aria-labelledby="pills-sell-tab" tabindex="0">
-                                        <div class="filter">
-                                            <form action="#">
-                                                <div class="row gy-sm-4 gy-3">
-                                                    <div class="col-12">
-                                                        <div class="search-container-banner">
-                                                            <span class="icon-search-banner"><i
-                                                                        class="fas fa-search"></i></span>
-                                                            <input type="text" class="search-input-banner" placeholder="Đường phố, quận huyện, dự án,...">
-                                                            <button class="search-button-banner">Tìm
-                                                                    mua</button>
-                                                        </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-sell" role="tabpanel" aria-labelledby="pills-sell-tab" tabindex="0">
+                                    <div class="filter">
+                                        <form action="#">
+                                            <div class="row gy-sm-4 gy-3">
+                                                <div class="col-12">
+                                                    <div class="search-container-banner">
+                                                        <span class="icon-search-banner"><i
+                                                                    class="fas fa-search"></i></span>
+                                                        <input type="text" class="search-input-banner" placeholder="Đường phố, quận huyện, dự án,...">
+                                                        <button class="search-button-banner">Tìm
+                                                                mua</button>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -426,6 +395,7 @@
         </section>
         <!-- ============================= Banner Three End ============================= -->
 
+        <!-- ============================= Các dự án mới ============================= -->
         <section class="property-five">
             <div class="container container-two">
                 <div class="section-heading style-left style-flex">
@@ -567,11 +537,13 @@
                 </div>
             </div>
         </section>
+        <!-- ============================= Hết Các dự án mới ============================= -->
 
+        <!-- ============================= Thanh giới thiệu dịch vụ ============================= -->
         <section class="newsletter bg-white">
             <div>
                 <div class="newsletter-content text-center background-img" data-background-image="../assets/images/thumbs/why_choose_one_bg.jpg">
-                    <div class="newsletter-content__title_backgroud">
+                    <div class="newsletter-content__title_backgroud" style=" background-image: url(../assets/images/thumbs/why_choose_one_shape_1.png);">
                         <h2 class="newsletter-content__title">Mua nhà lần đầu với Landchat</h2>
                     </div>
                     <div class="container container-two">
@@ -626,7 +598,9 @@
                 </div>
             </div>
         </section>
+        <!-- ============================= Thanh giới thiệu dịch vụ ============================= -->
 
+        <!-- ============================= Danh sách bất động sản ============================= -->
         <section class="property-four">
             <div class="container container-two">
                 <div class="section-heading style-left style-flex">
@@ -652,7 +626,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
 
                                 <span class="property-item__badgeFour_vip fw-500 font-14 text-uppercase">
@@ -707,7 +682,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
 
                                 <span class="property-item__badgeFour_hot fw-500 font-14 text-uppercase">
@@ -762,7 +738,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
 
                                 <span class="property-item__badgeFour_vip fw-500 font-14 text-uppercase">
@@ -817,7 +794,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
                                 <span class="property-item__badgeFour_vip fw-500 font-14 text-uppercase">
                                         <span class="text-gradient">Vip </span>
@@ -871,7 +849,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
                                 <span class="property-item__badgeFour_vip fw-500 font-14 text-uppercase">
                                         <span class="text-gradient">Vip </span>
@@ -925,7 +904,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
                                 <span class="property-item__badgeFour_vip fw-500 font-14 text-uppercase">
                                         <span class="text-gradient">Vip </span>
@@ -979,7 +959,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
                                 <span class="property-item__badgeFour_vip fw-500 font-14 text-uppercase">
                                         <span class="text-gradient">Vip </span>
@@ -1033,7 +1014,8 @@
                                 </a>
                                 <span class="property-item__badgeFour_tim fw-500 font-14 text-uppercase">
                                         <a href class="text-gradient"><i
-                                                class="icon-favorite_outline" style="font-size: 24px;"></i></a>
+                                                class="icon-favorite_outline"
+                                                style="font-size: 24px;"></i></a>
                                     </span>
                                 <span class="property-item__badgeFour_vip fw-500 font-14 text-uppercase">
                                         <span class="text-gradient">Vip </span>
@@ -1086,7 +1068,9 @@
                 </div>
             </div>
         </section>
+        <!-- ============================= Danh sách bất động sản ============================= -->
 
+        <!-- ============================= Nhà môi giới ============================= -->
         <section class="property-type-five">
             <div class="container container-two">
                 <div class="section-heading">
@@ -1142,7 +1126,7 @@
                                         <span class="icon-star" data-value="4"></span>
                                         <span class="icon-star" data-value="5"></span>
                                     </div>
-                                    <p class="property-type-five-item__desc"><i class="fas fa-solid fa-phone"></i>
+                                    <p class="property-type-five-item__desc_phone"><i class="fas fa-solid fa-phone"></i>
                                         <a href>0905.222.555</a></p>
                                 </div>
                             </div>
@@ -1168,7 +1152,7 @@
                                         <span class="icon-star" data-value="4"></span>
                                         <span class="icon-star" data-value="5"></span>
                                     </div>
-                                    <p class="property-type-five-item__desc"><i class="fas fa-solid fa-phone"></i>
+                                    <p class="property-type-five-item__desc_phone"><i class="fas fa-solid fa-phone"></i>
                                         <a href>0905.222.555</a></p>
                                 </div>
                             </div>
@@ -1194,7 +1178,7 @@
                                         <span class="icon-star" data-value="4"></span>
                                         <span class="icon-star" data-value="5"></span>
                                     </div>
-                                    <p class="property-type-five-item__desc"><i class="fas fa-solid fa-phone"></i>
+                                    <p class="property-type-five-item__desc_phone"><i class="fas fa-solid fa-phone"></i>
                                         <a href>0905.222.555</a></p>
                                 </div>
                             </div>
@@ -1220,7 +1204,7 @@
                                         <span class="icon-star" data-value="4"></span>
                                         <span class="icon-star" data-value="5"></span>
                                     </div>
-                                    <p class="property-type-five-item__desc"><i class="fas fa-solid fa-phone"></i>
+                                    <p class="property-type-five-item__desc_phone"><i class="fas fa-solid fa-phone"></i>
                                         <a href>0905.222.555</a></p>
                                 </div>
                             </div>
@@ -1246,7 +1230,7 @@
                                         <span class="icon-star" data-value="4"></span>
                                         <span class="icon-star" data-value="5"></span>
                                     </div>
-                                    <p class="property-type-five-item__desc"><i class="fas fa-solid fa-phone"></i>
+                                    <p class="property-type-five-item__desc_phone"><i class="fas fa-solid fa-phone"></i>
                                         <a href>0905.222.555</a></p>
                                 </div>
                             </div>
@@ -1272,7 +1256,7 @@
                                         <span class="icon-star" data-value="4"></span>
                                         <span class="icon-star" data-value="5"></span>
                                     </div>
-                                    <p class="property-type-five-item__desc"><i class="fas fa-solid fa-phone"></i>
+                                    <p class="property-type-five-item__desc_phone"><i class="fas fa-solid fa-phone"></i>
                                         <a href>0905.222.555</a></p>
                                 </div>
                             </div>
@@ -1298,7 +1282,7 @@
                                         <span class="icon-star" data-value="4"></span>
                                         <span class="icon-star" data-value="5"></span>
                                     </div>
-                                    <p class="property-type-five-item__desc"><i class="fas fa-solid fa-phone"></i>
+                                    <p class="property-type-five-item__desc_phone"><i class="fas fa-solid fa-phone"></i>
                                         <a href>0905.222.555</a></p>
                                 </div>
                             </div>
@@ -1307,19 +1291,23 @@
                 </div>
             </div>
         </section>
+        <!-- ============================= Nhà môi giới ============================= -->
 
+        <!-- ============================= Thanh Link Gửi đăng tin ============================= -->
         <section class="newsletter bg-white">
             <div>
                 <div class="newsletter-content newsletter-content-create newsletter-content-new text-center background-img" data-background-image="../assets/images/thumbs/newsletter-bg.png">
                     <div class="container container-create">
                         <h2 class="text-white">Kết nối người Mua và Bán bất động sản</h2>
                         <button type="submit" class="btn btn-main-create text-uppercase flex-shrink-0 text-uppercase_backgroup">
-                                Đăng tín Bán / cho Thuê </button>
+                                Đăng tin Bán / cho Thuê </button>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- ============================= Thanh Link Gửi đăng tin ============================= -->
 
+        <!-- ============================= Bài Viết ============================= -->
         <section class="property-five-blog">
             <div class="container container-two ">
                 <div class="row">
@@ -1397,6 +1385,9 @@
                 </div>
             </div>
         </section>
+        <!-- ============================= Bài Viết ============================= -->
+
+        <!-- ============================= Nhà cưng ứng ============================= -->
         <div class="service-slider-section overflow-hidden">
             <div class="service-slider d-flex align-items-center gap-4">
                 <div class="service-slider__item  d-flex align-items-center gap-3">
@@ -1441,7 +1432,9 @@
                 </div>
             </div>
         </div>
+        <!-- ============================= Nhà cưng ứng ============================= -->
 
+        <!-- ============================= Tag ============================= -->
         <section class="about-five">
             <div class="container container-two">
                 <div class="row flex-wrap-reverse">
@@ -1470,10 +1463,14 @@
                                 <div id="sell1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item-tag"><a href="">Second item 1</a></li>
-                                            <li class="list-group-item-tag"><a href="">Second item 2</a></li>
-                                            <li class="list-group-item-tag"><a href="">Second item 3</a></li>
-                                            <li class="list-group-item-tag"><a href="">Second item 4</a></li>
+                                            <li class="list-group-item-tag"><a href>Second item
+                                                        1</a></li>
+                                            <li class="list-group-item-tag"><a href>Second item
+                                                        2</a></li>
+                                            <li class="list-group-item-tag"><a href>Second item
+                                                        3</a></li>
+                                            <li class="list-group-item-tag"><a href>Second item
+                                                        4</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1716,14 +1713,14 @@
                     </div>
                 </div>
         </section>
+        <!-- ============================= Tag ============================= -->
 
-        <!-- bottom Footer -->
-
+        <!-- ============================= Fôter ============================= -->
         <footer class="footer" id="footer-black" style="background: url(../assets/images/thumbs/site_footer_top_bg.jpg);">
             <div class="container container-two">
                 <div class="row gy-5">
                     <div class="col-xl-4 col-lg-12 col-md-6 col-sm-6 col-12">
-                        <div class="footer-item">
+                        <div class="footer-item wow bounceInUp">
                             <div class="footer-item__logo">
                                 <a href> <img src="../assets/images/logo/white-logo.png" alt></a>
                             </div>
@@ -1748,7 +1745,7 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12 col-center-display-footer">
-                        <div class="footer-item">
+                        <div class="footer-item wow bounceInUp">
                             <h6 class="footer-item__title">THÔNG TIN
                             </h6>
                             <ul class="footer-menu">
@@ -1764,7 +1761,7 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12">
-                        <div class="footer-item">
+                        <div class="footer-item wow bounceInUp">
                             <h6 class="footer-item__title">QUY ĐỊNH</h6>
                             <ul class="footer-menu">
                                 <li class="footer-menu__item"><a href class="footer-menu__link">Quy
@@ -1781,7 +1778,7 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                        <div class="footer-item">
+                        <div class="footer-item wow bounceInUp">
                             <div class="form-box">
                                 <h2 class="form-box__title">ĐĂNG KÝ MUA/THUÊ
                                 </h2>
@@ -1810,11 +1807,11 @@
                                         <div class="col-8" style="display: flex; justify-content: flex-end; gap: 20px;">
                                             <div class="common-check mb-0">
                                                 <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1">
-                                                <label class="form-check-label" for="radio1">Mua</label>
+                                                <label class="form-check-label check-label-foodter" for="radio1">Mua</label>
                                             </div>
                                             <div class="common-check mb-0">
                                                 <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
-                                                <label class="form-check-label" for="radio1">Thuê</label>
+                                                <label class="form-check-label check-label-foodter-end" for="radio2">Thuê</label>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -1883,6 +1880,8 @@
                     </div>
                 </div>
         </section>
+
+        <!-- ============================= Fôter ============================= -->
     </main>
 
     <!-- Jquery js -->
@@ -1903,10 +1902,31 @@
     <script src="../assets/js/image-uploader.min.js"></script>
     <!-- jQuery Ui Css -->
     <script src="../assets/js/jquery-ui.min.js"></script>
-
+    <!-- Vegas JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>
     <!-- main js -->
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/phone.js"></script>
+    <script src="../assets/js/location.js"></script>
+    <!-- wowjs -->
+    <script src="../assets/wowjs/node_modules/wow.js/dist/wow.js"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow', // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 0, // distance to the element when triggering the animation (default is 0)
+            mobile: true, // trigger animations on mobile devices (default is true)
+            live: true, // act on asynchronously loaded content (default is true)
+            callback: function(box) {
+                // the callback is fired every time an animation is started
+                // the argument that is passed in is the DOM node being animated
+            },
+            scrollContainer: null, // optional scroll container selector, otherwise use window,
+            resetAnimation: true, // reset animation on end (default is true)
+        });
+        wow.init();
+    </script>
+
 </body>
 
 <!-- Mirrored from wowtheme7.com/tf/cityscape/demo/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Jun 2024 01:16:05 GMT -->

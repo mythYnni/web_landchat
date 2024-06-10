@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Vidaloka&amp;display=swap");
 :root {
     /* Font Family Variable */
+    --bs-accordion-btn-iconss: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 11.354a.5.5 0 0 0 .708 0L8 5.707l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 0 .708z'/%3e%3c/svg%3e);
     --body-font: 'Inter', sans-serif;
     /* Font Size Variable Start */
     --heading-one: clamp(2rem, -0.0733rem + 6.3692vw, 4.25rem);
@@ -2259,6 +2260,10 @@ button:focus {
 .btn-main-buy {
     background-color: transparent !important;
     border-color: hsl(175deg 52.43% 59.61%) !important;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 6px 15px !important;
 }
 
 .btn-main::before,
@@ -3048,7 +3053,6 @@ input[type=number] {
 
 .common-tab .nav-item .nav-link {
     color: hsl(var(--heading-color));
-    padding: 10px 25px !important;
     background-color: hsl(0deg 0% 100% / 52%);
     border-radius: 5px;
     transition: 0.2s linear;
@@ -3060,20 +3064,6 @@ input[type=number] {
     border-radius: 6px 6px 0px 0px;
     line-height: 24px;
     font-size: 16px;
-}
-
-@media screen and (max-width: 767px) {
-    .common-tab .nav-item .nav-link {
-        padding: 8px 12px !important;
-    }
-    .common-tab .nav-item .nav-link.active {
-        color: rgba(59, 130, 246, 1) !important;
-        border-color: white !important;
-        line-height: 24px;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 8px 12px !important;
-    }
 }
 
 .common-tab .nav-item .nav-link::before {
@@ -3090,13 +3080,16 @@ input[type=number] {
     transition: 0.2s linear;
 }
 
+.flx-align {
+    gap: 30px;
+}
+
 .common-tab .nav-item .nav-link.active {
     color: rgba(59, 130, 246, 1) !important;
     border-color: white !important;
     line-height: 24px;
     font-size: 16px;
     font-weight: 600;
-    padding: 10px 25px;
 }
 
 .common-tab .nav-item .nav-link.active::before {
@@ -3413,7 +3406,7 @@ input[type=number] {
     font-weight: 600;
     font-size: 18px;
     line-height: 28px;
-    padding: 0px 0px 8px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .style-left-tin-tuc .section-heading__desc-tin-tuc {
@@ -3476,13 +3469,134 @@ input[type=number] {
     }
 }
 
-.avatar-default {
-    margin-right: 30px;
+
+/* Định vị phần chứa avatar */
+
+.header-right {
+    position: relative;
+}
+
+.location p {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+}
+
+.location:hover>p {
+    color: #62cec5;
+    cursor: pointer;
+}
+
+.options-location {
+    display: none;
+    /* Ẩn danh sách khi không cần thiết */
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.search-box-location {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(213, 218, 225, 1);
+    background: white;
+    color: black;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.options-location.active {
+    display: block;
+    padding: 10px;
+    width: 286px;
+    top: 170%;
+    border: 1px solid rgba(213, 218, 225, 1);
+    border-radius: 8px;
+}
+
+.location-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid;
+}
+
+.location-list .option {
+    padding: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    border-radius: 8px;
+    color: rgba(42, 51, 66, 1);
+}
+
+.location-list .option:hover {
+    background-color: #62CEC5;
+    color: white !important;
+}
+
+.hide {
+    display: none;
+}
+
+.location p .icon-location {
+    color: rgba(59, 130, 246, 1);
+}
+
+
+/* Định vị và căn chỉnh menu */
+
+#account-info {
+    display: none;
+    position: absolute;
+    top: 170%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    width: 200px;
+    z-index: 1000;
+    transform: translateX(-50%);
+    width: 286px;
+    border: 1px solid rgba(85, 105, 135, 0.08);
+    border-radius: 8px;
+}
+
+.profile-user-hover li:hover>a {
+    background-color: #62CEC5;
+    color: white !important;
+}
+
+.profile-user-link {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#account-info.show {
+    display: block;
+}
+
+#account-info .nav-menu__item {
+    padding: 5px 0;
+}
+
+#account-info .nav-menu__link {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
 }
 
 .avatar-default img {
     width: 35px;
     height: 35px;
+    border-radius: 50%;
 }
 
 .offcanvas-btn img {
@@ -8690,11 +8804,16 @@ button.slick-next {
 }
 
 .our-service-item__icon img {
-    max-width: 60%
+    max-width: 60%;
+    filter: invert(23%) sepia(100%) saturate(1537%) hue-rotate(220deg);
 }
 
 .our-service-item__icon:hover {
     background-color: #39c2c0;
+}
+
+.our-service-item__icon:hover img {
+    filter: brightness(0) invert(1) contrast(150%) saturate(10000%) grayscale(10%);
 }
 
 .slick-prev-blog,
@@ -9060,18 +9179,21 @@ button.slick-next {
 
 /* ======================== Banner Seven End ============================== */
 
+.banner-overlay {
+    position: relative;
+}
+
 .banner-overlay__slider {
-    background-image: url("../images/thumbs/banner-eight.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    position: relative;
-    z-index: 1;
+    /* position: relative; */
+    z-index: -1;
     padding: clamp(5rem, -2.607rem + 15.848vw, 11.25rem) 0;
 }
 
 .banner-overlay__slider::before {
-    position: absolute;
+    /* position: absolute; */
     content: "";
     width: 100%;
     height: 100%;

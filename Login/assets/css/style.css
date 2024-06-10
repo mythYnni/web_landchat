@@ -27,7 +27,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -56,13 +56,13 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #040404;
 }
 
 .login-5 a {
     text-decoration: none;
-    color: #62cec5;
+    color: #62cec5 !important;
     font-weight: 500;
 }
 
@@ -192,7 +192,6 @@ h6,
     margin-bottom: 0;
     display: flex;
     align-items: center;
-    margin-top: 20px;
 }
 
 .login-5 .form-section .form-check-label {
@@ -208,7 +207,11 @@ h6,
 }
 
 .login-5 .form-section a.forgot-password:hover {
-    color: rgb(0, 123, 113);
+    color: rgb(0, 123, 113) !important;
+}
+
+.login-5 .form-section .thembo:hover {
+    color: rgb(0, 123, 113) !important;
 }
 
 .login-5 .logo img {

@@ -10,16 +10,25 @@ selectorBtn_multiselect.addEventListener("click", () => {
 items_multiselect.forEach(item => {
     item.addEventListener("click", (e) => {
         e.stopPropagation();
-        if (!item.classList.contains('has-nested')) {
-            item.classList.toggle("checked-multiselect");
-            updateCheckedCount();
-        }
+        item.classList.toggle("checked-multiselect");
+        updateCheckedCount();
+
     });
 });
+
+function removeAllCheckedFromNested() {
+    document.querySelectorAll('.items-multiselect-con.checked-multiselect').forEach(nestedItem => {
+        nestedItem.classList.remove('checked-multiselect');
+        updateCheckedCount();
+    });
+}
 
 nestedItems_multiselect.forEach(item => {
     item.addEventListener("click", (e) => {
         e.stopPropagation();
+        // Loại bỏ checked-multiselect của tất cả các phần tử trong cùng class
+        removeAllCheckedFromNested();
+        // Đảo ngược trạng thái của show-nested
         item.classList.toggle("show-nested");
     });
 });

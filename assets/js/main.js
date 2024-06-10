@@ -1,5 +1,43 @@
 (function($) {
+    $(document).ready(function() {
+        $('.banner-overlay__slider').vegas({
+            overlay: true,
+            transition: 'fade',
+            transitionDuration: 4000,
+            delay: 10000,
+            animation: 'random',
+            animationDuration: 20000,
+            slides: [{
+                src: '../assets/images/thumbs/banner-eight.jpg'
+            }]
+        });
+    });
+
     "use strict";
+    document.querySelectorAll('.check-label-foodter').forEach(label => {
+        label.addEventListener('click', () => {
+            const input = label.previousElementSibling; // Lấy input radio liền kề với nhãn
+            if (input) {
+                input.checked = true; // Chọn input radio
+            }
+        });
+    });
+
+
+    document.querySelector('.avatar-default').addEventListener('click', function() {
+        var accountInfo = document.getElementById('account-info');
+        accountInfo.classList.toggle('show');
+    });
+
+    // Đóng menu khi click bên ngoài
+    document.addEventListener('click', function(event) {
+        var accountInfo = document.getElementById('account-info');
+        var avatarButton = document.querySelector('.avatar-default');
+
+        if (!avatarButton.contains(event.target) && !accountInfo.contains(event.target)) {
+            accountInfo.classList.remove('show');
+        }
+    });
 
     // ==========================================
     //      Start Document Ready function
